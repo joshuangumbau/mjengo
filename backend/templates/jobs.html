@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <h1>Create New Job</h1>
+    <form action="{{ url_for('jobcreation') }}" method="POST">
+        <label for="companyname">Company Name:</label>
+        <input type="text" id="companyname" name="companyname" required><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br>
+
+        <label for="numberofworkers">Number of Workers:</label>
+        <input type="number" id="numberofworkers" name="numberofworkers" required><br>
+
+        <label for="jobdescription">Job Description:</label>
+        <textarea id="jobdescription" name="jobdescription" required></textarea><br>
+
+        <label for="jobtype">Job Type:</label>
+        <input type="text" id="jobtype" name="jobtype" required><br>
+
+        <label for="jobrequirements">Job Requirements:</label>
+        <textarea id="jobrequirements" name="jobrequirements" required></textarea><br>
+
+        <label for="jobdeadline">Job Deadline:</label>
+        <input type="date" id="jobdeadline" name="jobdeadline" required><br>
+
+        <input type="submit" value="Create Job">
+    </form>
+</body>
+</html>

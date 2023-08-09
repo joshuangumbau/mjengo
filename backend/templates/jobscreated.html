@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Added Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <h1>Added Jobs</h1>
+    <table>
+        <tr>
+            <th>Company Name</th>
+            <th>Location</th>
+            <th>Number of Workers</th>
+            <th>Job Description</th>
+            <th>Job Type</th>
+            <th>Job Requirements</th>
+            <th>Job Deadline</th>
+        </tr>
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job.companyname }}</td>
+            <td>{{ job.location }}</td>
+            <td>{{ job.numberofworkers }}</td>
+            <td>{{ job.jobdescription }}</td>
+            <td>{{ job.jobtype }}</td>
+            <td>{{ job.jobrequirements }}</td>
+            <td>{{ job.jobdeadline }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</body>
+</html>
