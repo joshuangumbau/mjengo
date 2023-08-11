@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <h2>Incorrect ID or password</h2>
+        <form action="{{ url_for('login') }}" method="POST">
+            <label for="nationalid">National ID</label>
+            <input type="number" id="nationalid" name="nationalid" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            
+            <input type="submit" value="Log In">
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('index') }}">Sign Up</a></p>
+    </div>
+</body>
+</html>
